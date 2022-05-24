@@ -1,36 +1,43 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import { store } from '@/store';
+import { createRouter, createWebHistory } from "vue-router";
+import { store } from "@/store";
+
+import HomeView from "./../views/HomeView.vue";
+import AboutView from "./../views/AboutView.vue";
+import ContactView from "./../views/ContactView.vue";
+import PrivacyPolicyView from "./../views/PrivacyPolicyView.vue";
+import AdvertisingPrivacyPolicyView from "./../views/AdvertisingPrivacyPolicyView.vue";
+import GDPRView from "./../views/GDPRView.vue";
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: () => import(/* webpackChunkName: "about" */ '../views/HomeView.vue'),
+    path: "/",
+    name: "home",
+    component: HomeView,
   },
   {
-    path: '/about',
-    name: 'about',
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
+    path: "/about",
+    name: "about",
+    component: AboutView,
   },
   {
-    path: '/contact',
-    name: 'contact',
-    component: () => import(/* webpackChunkName: "about" */ '../views/ContactView.vue'),
+    path: "/contact",
+    name: "contact",
+    component: ContactView,
   },
   {
-    path: '/privacy-policy',
-    name: 'privacyPolicy',
-    component: () => import(/* webpackChunkName: "about" */ '../views/PrivacyPolicyView.vue'),
+    path: "/privacy-policy",
+    name: "privacyPolicy",
+    component: PrivacyPolicyView,
   },
   {
-    path: '/advertising-privacy-policy',
-    name: 'advertisingPrivacyPolicy',
-    component: () => import(/* webpackChunkName: "about" */ '../views/AdvertisingPrivacyPolicyView.vue'),
+    path: "/advertising-privacy-policy",
+    name: "advertisingPrivacyPolicy",
+    component: AdvertisingPrivacyPolicyView,
   },
   {
-    path: '/gdpr',
-    name: 'gdpr',
-    component: () => import(/* webpackChunkName: "about" */ '../views/GDPRView.vue'),
+    path: "/gdpr",
+    name: "gdpr",
+    component: GDPRView,
   },
 ];
 
