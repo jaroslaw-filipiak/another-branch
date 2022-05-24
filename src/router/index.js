@@ -1,0 +1,49 @@
+import { createRouter, createWebHistory } from 'vue-router';
+import { store } from '@/store';
+
+const routes = [
+  {
+    path: '/',
+    name: 'home',
+    component: () => import(/* webpackChunkName: "about" */ '../views/HomeView.vue'),
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ContactView.vue'),
+  },
+  {
+    path: '/privacy-policy',
+    name: 'privacyPolicy',
+    component: () => import(/* webpackChunkName: "about" */ '../views/PrivacyPolicyView.vue'),
+  },
+  {
+    path: '/advertising-privacy-policy',
+    name: 'advertisingPrivacyPolicy',
+    component: () => import(/* webpackChunkName: "about" */ '../views/AdvertisingPrivacyPolicyView.vue'),
+  },
+  {
+    path: '/gdpr',
+    name: 'gdpr',
+    component: () => import(/* webpackChunkName: "about" */ '../views/GDPRView.vue'),
+  },
+];
+
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0 };
+  },
+});
+
+router.beforeEach(() => {
+  store.isMobileMenuVisible = false;
+});
+
+export default router;
